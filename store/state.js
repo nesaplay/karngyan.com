@@ -12,7 +12,7 @@ const state = {
   },
   resume: {
     enabled: true,
-    pdfUrl: '/GYAN_KARN_RESUME.pdf'
+    pdfUrl: '/RESUME_GYAN_KARN.pdf'
   },
   uses: {
     enabled: true,

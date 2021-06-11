@@ -7,7 +7,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'karngyan.com',
+    title: 'Karn | Friendly Neighborhood Developer',
     htmlAttrs: {
       lang: 'en'
     },
@@ -31,13 +31,14 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@900&family=Poppins:ital,wght@0,400;0,600;1,400;1,700&display=swap'}
-    ]
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@900&family=Poppins:ital,wght@0,400;0,600;1,400;1,700&display=swap'},
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    'aos/dist/aos.css'
+    'aos/dist/aos.css',
+    'github-calendar/dist/github-calendar-responsive.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -50,7 +51,8 @@ export default {
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: [
     '@/components',
-    '@/components/home'
+    '@/components/home',
+    '@/components/logos',
   ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
@@ -71,7 +73,26 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    'nuxt-i18n',
+    'nuxt-buefy',
   ],
+
+  i18n: {
+    lazy: true,
+    langDir: 'lang/',
+    locales: [
+      {code: 'en', name: 'English', file: 'en_US.js'}
+    ],
+    defaultLocale: 'en',
+    vueI18n: {
+      fallbackLocale: 'en',
+    },
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      onlyOnRoot: true,  // recommended
+    }
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
@@ -100,7 +121,7 @@ export default {
 
   loading: {
     color: '#fd2d78',
-    height: '3px',
+    height: '2px',
     throttle: 0
   },
 

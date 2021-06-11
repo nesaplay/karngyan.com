@@ -1,18 +1,18 @@
 <template>
-<nav class="backdrop-filter fixed w-full z-20 bg-gray-800">
-  <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+<nav class="backdrop-filter backdrop-blur shadow-sm sticky top-0 z-40 w-full bg-gray-800">
+  <div class="mx-auto px-2 sm:px-4 lg:px-8">
     <div class="relative flex items-center justify-between h-16">
       <div class="flex items-center px-2 lg:px-0">
-        <div class="flex-shrink-0">
-          <img class="block h-8 w-auto" src="../assets/logo.svg" alt="logo">
-        </div>
+        <nuxt-link :to="localePath('/')" class="flex-shrink-0">
+          <TheLogo class="block h-8 w-auto" />
+        </nuxt-link>
         <div class="hidden lg:block lg:ml-6">
           <div class="flex space-x-4">
-            <nuxt-link exact to="/" class="active text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</nuxt-link>
-            <nuxt-link to="/blog" class="active text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blog</nuxt-link>
-            <nuxt-link to="/projects" class="active text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</nuxt-link>
-            <nuxt-link to="/uses" class="active text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Uses</nuxt-link>
-            <nuxt-link to="/resume" class="active text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Resume</nuxt-link>
+            <nuxt-link exact :to="localePath('/')" class="active text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-bold">{{ $t('nav.home')}}</nuxt-link>
+            <nuxt-link :to="localePath('/blog')" class="active text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-bold">{{ $t('nav.blog')}}</nuxt-link>
+            <nuxt-link :to="localePath('/projects')" class="active text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-bold">{{ $t('nav.projects')}}</nuxt-link>
+            <nuxt-link :to="localePath('/uses')" class="active text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-bold">{{ $t('nav.uses')}}</nuxt-link>
+            <nuxt-link :to="localePath('/resume')" class="active text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-bold">{{ $t('nav.resume')}}</nuxt-link>
           </div>
         </div>
       </div>
@@ -48,8 +48,10 @@
 </template>
 
 <script>
+import TheLogo from "~/components/logos/TheLogo";
 export default {
   name: "TheNavBar",
+  components: {TheLogo},
   data() {
     return {
       mobileMenuOpen: false

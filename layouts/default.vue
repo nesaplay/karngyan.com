@@ -7,17 +7,7 @@
 
 <style>
 html {
-  font-family:
-    'Poppins',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  @apply bg-gray-800;
+  @apply bg-gray-800 font-sans;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;

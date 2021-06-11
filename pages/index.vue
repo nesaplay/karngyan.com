@@ -1,13 +1,19 @@
 <template>
   <div>
     <HeroSection/>
+    <GithubCalendar />
   </div>
 </template>
 
 <script>
-import HeroSection from "~/components/home/HeroSection";
 export default {
-  components: {HeroSection}
+  head() {
+    return {
+      title: 'Home - Karn | Friendly Neighborhood Developer',
+      meta: [
+      ],
+    }
+  }
 }
 </script>
 
