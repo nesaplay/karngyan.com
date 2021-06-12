@@ -1,4 +1,10 @@
 const state = {
+  github: {
+    username: 'karngyan'
+  },
+  linkedin: {
+    username: 'karngyan'
+  },
   buyMeACoffee: {
     enabled: true,
     beer: true,

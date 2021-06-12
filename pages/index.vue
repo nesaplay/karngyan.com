@@ -2,6 +2,7 @@
   <div>
     <HeroSection/>
     <GithubCalendar />
+    <Recommendations />
   </div>
 </template>
 

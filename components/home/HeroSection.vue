@@ -1,20 +1,10 @@
 <template>
   <div class="relative bg-gray-800 overflow-hidden">
-    <div class="hidden sm:block sm:absolute sm:inset-0" aria-hidden="true">
-      <svg class="absolute bottom-0 right-0 transform translate-x-1/2 mb-48 text-gray-700 lg:top-0 lg:mt-28 lg:mb-0 xl:transform-none xl:translate-x-0" width="364" height="384" viewBox="0 0 364 384" fill="none">
-        <defs>
-          <pattern id="eab71dd9-9d7a-47bd-8044-256344ee00d0" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-            <rect x="0" y="0" width="4" height="4" fill="currentColor" />
-          </pattern>
-        </defs>
-        <rect width="364" height="384" fill="url(#eab71dd9-9d7a-47bd-8044-256344ee00d0)" />
-      </svg>
-    </div>
     <div class="relative">
       <main class="my-8">
         <div class="mx-auto max-w-7xl">
-          <div class="lg:grid lg:grid-cols-12 lg:gap-8">
-            <div class="px-4 sm:px-6 sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left lg:flex lg:items-center">
+          <div class="lg:grid lg:grid-cols-12">
+            <div class="px-4 border-l border-r border-dashed border-gray-700 sm:px-6 sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left lg:flex lg:items-center">
               <div>
                 <nuxt-link :to="localePath('/blog')" class="inline-flex items-center text-white bg-gray-900 rounded-full p-0.5 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200">
                   <span class="px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-indigo-600 rounded-full">{{ $t('hero.iBlogTech') }}</span>
@@ -25,10 +15,12 @@
                 </nuxt-link>
                 <h1 class="mt-4 text-3xl tracking-tight font-extrabold text-white sm:mt-5 sm:leading-none lg:mt-6 lg:text-3xl xl:text-3xl">
                   <span class="md:block">{{ $t('hero.friendlyNeighborhood') }}</span>
-                  <vue-typer :text="$t('hero.words')"></vue-typer>
+                  <div>
+                    <vue-typer :text="$t('hero.words')"></vue-typer>
+                  </div>
                 </h1>
                 <p class="mt-3 text-base text-gray-300 sm:mt-5">
-                  {{ $t('hero.description')}}
+                  {{ $t('hero.description').toLowerCase() }}
                 </p>
                 <p class="mt-8 text-sm text-white uppercase tracking-wide font-semibold sm:mt-10">Worked at</p>
                 <div class="mt-5 w-full sm:mx-auto lg:ml-0">
@@ -40,7 +32,7 @@
                       <Amazon class="h-8 sm:h-9" />
                     </a>
                     <a href="https://interviewready.io" target="_blank" class="flex items-center justify-center px-1">
-                      <InterviewReady class="h-8 sm:h-9" />
+                      <InterviewReady class="h-8 p-0.5 sm:h-9" />
                     </a>
                     <a href="https://crio.do" target="_blank" class="flex justify-center px-1">
                       <CrioDo class="h-8 sm:h-9" />
@@ -49,8 +41,8 @@
                 </div>
               </div>
             </div>
-            <div class="mt-8 sm:mt-16 lg:mt-0 lg:col-span-6">
-              <div data-aos="zoom-in" class="bg-gray-900 sm:max-w-md sm:w-full sm:mx-auto sm:rounded-lg sm:overflow-hidden">
+            <div class="mt-8 border-r px-5 border-dashed border-gray-700 sm:mt-16 lg:mt-0 lg:col-span-6">
+              <div  class="bg-gray-900 w-full sm:mx-auto rounded-lg sm:overflow-hidden">
                 <div class="px-8 py-10 sm:px-10">
                   <div class="">
                     <div class="items-center flex-col justify-center flex">

@@ -2,6 +2,7 @@
   <div>
     <TheNavBar/>
     <Nuxt />
+    <TheFooter />
   </div>
 </template>
 
@@ -14,9 +15,7 @@ html {
 }
 </style>
 <script>
-import TheNavBar from "~/components/TheNavBar";
 
 export default {
-  components: {TheNavBar}
 }
 </script>
