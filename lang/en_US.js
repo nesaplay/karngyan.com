@@ -14,6 +14,14 @@ const strings = {
     description: 'I am a Software Engineer and a part time freelancer. I blog tech, write a weekend newsletter called Software Shots, and tinker with side projects every now n then.',
     words: ['developer', 'designer', 'engineer', 'programmer', 'encoder'],
     softwareShots: 'software shots'
+  },
+  recommendations: {
+    header: 'recommendations',
+    subtext: 'what do my mentors say'
+  },
+  githubCalendar: {
+    header: 'contributions',
+    subtext: 'github calendar heatmap'
   }
 }
 

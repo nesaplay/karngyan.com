@@ -1,14 +1,14 @@
 <template>
   <div class="relative bg-gray-800 overflow-hidden">
     <div class="relative">
-      <main class="my-8">
-        <div class="mx-auto max-w-7xl">
+      <main class="">
+        <div class="mx-auto py-8 max-w-7xl border-l border-r border-dashed border-gray-700">
           <div class="lg:grid lg:grid-cols-12">
-            <div class="px-4 border-l border-r border-dashed border-gray-700 sm:px-6 sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left lg:flex lg:items-center">
+            <div class="px-4 sm:px-6 border-r border-dashed border-gray-700 sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left lg:flex lg:items-center">
               <div>
                 <nuxt-link :to="localePath('/blog')" class="inline-flex items-center text-white bg-gray-900 rounded-full p-0.5 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200">
-                  <span class="px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-indigo-600 rounded-full">{{ $t('hero.iBlogTech') }}</span>
-                  <span class="ml-4 text-sm">{{$t('hero.haveALook')}}</span>
+                  <span class="px-3 py-0.5 text-white text-xs font-semibold leading-5 tracking-wide bg-indigo-600 rounded-full">{{ $t('hero.iBlogTech') }}</span>
+                  <span class="ml-4 text-xs">{{$t('hero.haveALook')}}</span>
                   <svg class="ml-2 w-5 h-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                   </svg>
@@ -41,7 +41,7 @@
                 </div>
               </div>
             </div>
-            <div class="mt-8 border-r px-5 border-dashed border-gray-700 sm:mt-16 lg:mt-0 lg:col-span-6">
+            <div class="mt-8 px-5 sm:mt-16 lg:mt-0 lg:col-span-6">
               <div  class="bg-gray-900 w-full sm:mx-auto rounded-lg sm:overflow-hidden">
                 <div class="px-8 py-10 sm:px-10">
                   <div class="">
@@ -106,7 +106,7 @@
                     </form>
                   </div>
                 </div>
-                <div class="px-8 py-4 bg-gray-900 border-t border-gray-800 sm:px-10">
+                <div class="px-8 py-4 bg-gray-900 rounded-b-lg border-t border-gray-800 sm:px-10">
                   <p class="text-xs leading-5 text-gray-500">By signing up, you agree to our <a href="https://www.getrevue.co/terms?locale=en" target="_blank" class="font-medium text-gray-400 hover:text-gray-400 hover:underline">Terms of Service</a>, and <a href="https://www.getrevue.co/privacy?locale=en" target="_blank" class="font-medium text-gray-400 hover:text-gray-400 hover:underline">Privacy Policy.</a></p>
                 </div>
               </div>

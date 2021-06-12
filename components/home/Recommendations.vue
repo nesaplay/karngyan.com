@@ -1,18 +1,18 @@
 <template>
-  <div class="max-w-7xl mx-auto border-l border-r border-dashed border-gray-700">
-    <div class="max-w-prose text-center mx-auto my-6">
-      <p class="text-xs leading-6 text-indigo-600 font-semibold tracking-wide lowercase">what do my mentors say</p>
-      <a :href="`https://linkedin.com/in/${$store.state.linkedin.username}`" target="_blank" class="mt-2 text-3xl hover:text-hot-pink leading-8 font-extrabold tracking-tight text-gray-500">recommendations</a>
+  <div class="max-w-7xl py-4 mx-auto border-l border-r border-dashed border-gray-700">
+    <div class="max-w-prose text-center mx-auto py-6">
+      <p class="text-xs leading-6 text-indigo-600 font-semibold tracking-wide lowercase">{{ $t('recommendations.subtext') }}</p>
+      <a :href="`https://linkedin.com/in/${$store.state.social.linkedin}`" target="_blank" class="mt-2 text-3xl hover:text-hot-pink leading-8 font-extrabold tracking-tight text-gray-500">{{ $t('recommendations.header') }}</a>
     </div>
-    <section class="max-w-5xl mx-auto">
-      <div data-aos="fade-up" class="lg:grid lg:grid-cols-2 lg:gap-8 mb-4 lg:items-start px-4">
-        <div class="relative text-base max-w-prose mx-auto lg:max-w-none">
-          <blockquote class="relative bg-gray-900 rounded-lg shadow-lg">
+    <section class="max-w-7xl mx-auto">
+      <div data-aos="fade-up" class="lg:grid lg:grid-cols-2 lg:gap-4 mb-4 space-y-4 lg:space-y-0 lg:items-start px-4">
+        <div class="relative h-full bg-gray-900 rounded-lg shadow-lg text-base max-w-prose mx-auto lg:max-w-none">
+          <blockquote class="relative">
             <div class="rounded-t-lg px-5 py-5 sm:px-10 sm:pt-10 sm:pb-8">
               <div class="flex flex-row">
                 <a href="https://www.linkedin.com/in/varun-jain-582b0215/" target="_blank">
                   <cite class="flex items-center rounded-b-lg not-italic">
-                    <div class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 rounded-full border-2 border-hot-pink mr-4">
+                    <div class="flex-shrink-0 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 rounded-full border border-hot-pink mr-4">
                       <img class="w-8 h-8 rounded-full bg-indigo-300" src="../../assets/arijit.jpeg" alt="Arijit">
                     </div>
                     <span class="text-gray-400 font-semibold py-2">
@@ -32,18 +32,18 @@
             </div>
           </blockquote>
         </div>
-        <div class="relative text-base max-w-prose mx-auto lg:max-w-none">
-          <blockquote class="relative bg-gray-900 rounded-lg shadow-lg">
+        <div class="relative bg-gray-900 h-full rounded-lg shadow-lg text-base max-w-prose mx-auto lg:max-w-none">
+          <blockquote class="relative">
             <div class="rounded-t-lg px-5 py-5 sm:px-10 sm:pt-10 sm:pb-8">
               <div class="flex flex-row">
                 <a href="https://www.linkedin.com/in/varun-jain-582b0215/" target="_blank">
                   <cite class="flex items-center rounded-b-lg not-italic">
-                    <div class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 rounded-full border-2 border-hot-pink mr-4">
+                    <div class="flex-shrink-0 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 rounded-full border border-hot-pink mr-4">
                       <img class="w-8 h-8 rounded-full bg-indigo-300" src="../../assets/john.jpeg" alt="John">
                     </div>
                     <span class="text-gray-400 font-semibold py-2">
                       <strong class="text-gray-200 font-semibold">John George</strong>
-                      Senior Software Engineer, SendPost
+                      Sr. Software Engineer, SendPost
                     </span>
                   </cite>
                 </a>
@@ -66,12 +66,12 @@
               <div class="flex flex-row">
                 <a href="https://www.linkedin.com/in/varun-jain-582b0215/" target="_blank">
                   <cite class="flex items-center rounded-b-lg not-italic">
-                    <div class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 rounded-full border-2 border-hot-pink mr-4">
+                    <div class="flex-shrink-0 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 rounded-full border border-hot-pink mr-4">
                       <img class="w-8 h-8 rounded-full bg-indigo-300" src="../../assets/varun.jpeg" alt="Varun">
                     </div>
                     <span class="text-gray-400 font-semibold py-2">
                     <strong class="text-gray-200 font-semibold">Varun Jain</strong>
-                    Founder at SendX & SendPost
+                    Founder, SendX & SendPost
                   </span>
                   </cite>
                 </a>

@@ -14,19 +14,19 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Hi! I\'m Karn! I blog tech, write a weekend newsletter called Software Shots and toker with side projects every now n then.' },
+      { hid: 'description', name: 'description', content: 'I blog tech, write a weekend newsletter called Software Shots and toker with side projects every now n then.' },
       { name: 'title', content: 'Gyan Prakash Karn | Friendly Neighborhood Developer'},
       { name: 'author', content: 'Gyan Prakash Karn | mail@karngyan.com'},
       { property: 'og:type', content: 'website'},
       { property: 'og:url', content: 'https://karngyan.com'},
       { property: 'og:title', content: 'Karn | Friendly Neighborhood Developer'},
-      { property: 'og:description', content: 'Hi! I\'m Karn! I blog tech, write a weekend newsletter called Software Shots and toker with side projects every now n then.'},
+      { property: 'og:description', content: 'I blog tech, write a weekend newsletter called Software Shots and toker with side projects every now n then.'},
       { property: 'og:image', content: 'https://cdn.karngyan.com/logo_dark.png'},
 
       { property: 'twitter:card', content: 'https://cdn.karngyan.com/logo_dark.png'},
       { property: 'twitter:url', content: 'https://karngyan.com'},
       { property: 'twitter:title', content: 'Karn | Friendly Neighborhood Developer'},
-      { property: 'twitter:description', content: 'Hi! I\'m Karn! I blog tech, write a weekend newsletter called Software Shots and toker with side projects every now n then.'},
+      { property: 'twitter:description', content: 'I blog tech, write a weekend newsletter called Software Shots and toker with side projects every now n then.'},
       { property: 'twitter:image', content: 'https://cdn.karngyan.com/logo_dark.png'},
     ],
     link: [

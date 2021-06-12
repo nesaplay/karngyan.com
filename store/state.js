@@ -1,9 +1,11 @@
 const state = {
-  github: {
-    username: 'karngyan'
-  },
-  linkedin: {
-    username: 'karngyan'
+  name: 'gyan prakash karn',
+  social: {
+    github: 'karngyan',
+    linkedin: 'karngyan',
+    facebook: 'karnsometimes',
+    twitter: 'gyankarn',
+    instagram: 'karngyan.dev'
   },
   buyMeACoffee: {
     enabled: true,

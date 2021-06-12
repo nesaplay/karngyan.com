@@ -1,8 +1,8 @@
 <template>
   <div class="max-w-7xl mx-auto border-l border-r border-dashed border-gray-700">
-    <div class="max-w-prose text-center mx-auto my-4">
-      <p class="text-xs leading-6 text-indigo-600 font-semibold tracking-wide lowercase">GITHUB CALENDAR HEATMAP</p>
-      <a :href="`https://github.com/${$store.state.github.username}`" target="_blank" class="mt-2 text-3xl hover:text-hot-pink leading-8 font-extrabold tracking-tight text-gray-500">contributions</a>
+    <div class="max-w-prose text-center mx-auto py-4">
+      <p class="text-xs leading-6 text-indigo-600 font-semibold tracking-wide lowercase">{{ $t('githubCalendar.subtext') }}</p>
+      <a :href="`https://github.com/${$store.state.social.github}`" target="_blank" class="mt-2 text-3xl hover:text-hot-pink leading-8 font-extrabold tracking-tight text-gray-500">{{ $t('githubCalendar.header') }}</a>
     </div>
     <div class="calendar max-w-6xl content-center lowercase">
 
@@ -15,7 +15,7 @@ import GitHubCalendar from 'github-calendar'
 
 export default {
   mounted() {
-    GitHubCalendar(".calendar", this.$store.state.github.username, { responsive: true, tooltips: true });
+    GitHubCalendar(".calendar", this.$store.state.social.github, { responsive: true, tooltips: true });
   }
 }
 </script>
