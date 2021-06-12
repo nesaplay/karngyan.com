@@ -1,5 +1,6 @@
 const state = {
   name: 'gyan prakash karn',
+  domain: 'karngyan.com',
   social: {
     github: 'karngyan',
     linkedin: 'karngyan',

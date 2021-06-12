@@ -100,6 +100,7 @@ export default {
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {
     liveEdit: true,
+    dir: 'content'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -121,7 +122,7 @@ export default {
 
   loading: {
     color: '#fd2d78',
-    height: '2px',
+    height: '1px',
     throttle: 0
   },
 
