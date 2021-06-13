@@ -37,7 +37,7 @@ const config = {
             // cache static assets for 1 year on the CDN
             sharedCacheTime: 31536000
         },
-        "^images/(?:.+)\\.(?:js|css|svg|ttf|png|json)$": {
+        "^images/(?:.+)\\.(?:jpg|jpeg|gif|js|css|svg|ttf|png|json)$": {
             // don't modify original key. this is the default
             key: "$&",
             // use gzip for assets that benefit from it
