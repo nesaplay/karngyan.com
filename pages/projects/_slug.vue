@@ -35,7 +35,7 @@
               </div>
             </header>
 
-            <div class="prose dark:prose-dark break-all my-4 prose-sm max-w-4xl mx-auto">
+            <div class="prose dark:prose-dark break-words my-4 prose-sm max-w-4xl mx-auto">
               <nuxt-content :document="project" />
             </div>
           </div>
