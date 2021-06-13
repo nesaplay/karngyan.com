@@ -57,6 +57,11 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: 'uses -- Karn | Friendly Neighborhood Developer'
+    }
+  },
   data() {
     return {
       totalXP: 0,

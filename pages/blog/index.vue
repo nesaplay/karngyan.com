@@ -18,15 +18,14 @@
 export default {
   head() {
     return {
-      title: 'Blog -- Karn | Friendly Neighborhood Developer'
+      title: 'blog -- Karn | Friendly Neighborhood Developer'
     }
   },
-  async asyncData({ $content, params }) {
+  async asyncData({ $content }) {
     const articles = await $content('articles')
       .sortBy('createdAt', 'desc')
       .fetch()
 
-    console.debug(articles)
     return {
       articles
     }

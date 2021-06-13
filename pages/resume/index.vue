@@ -25,7 +25,11 @@
 
 <script>
 export default {
-  name: "index"
+  head() {
+    return {
+      title: 'resume -- Karn | Friendly Neighborhood Developer'
+    }
+  },
 }
 </script>
 

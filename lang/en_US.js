@@ -31,6 +31,10 @@ const strings = {
   uses: {
     header: 'uses',
     subtext: 'a quick summary of what I use on a daily basis to code and some codestats.net flex'
+  },
+  projects: {
+    header: 'projects',
+    subtext: 'this page lists some of my personal and work projects. every project has some story, click on the title to read'
   }
 }
 
