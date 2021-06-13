@@ -1,5 +1,7 @@
 # karngyan.com
 
+[![Production](https://github.com/karngyan/karngyan.com/actions/workflows/deploy.prod.yml/badge.svg)](https://github.com/karngyan/karngyan.com/actions/workflows/deploy.prod.yml)
+
 ## Build Setup
 
 ```bash
