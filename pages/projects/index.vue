@@ -23,6 +23,7 @@ export default {
   },
   async asyncData({ $content }) {
     const projects = await $content('projects')
+      .without(['body', 'toc'])
       .sortBy('id', 'asc')
       .fetch()
 
