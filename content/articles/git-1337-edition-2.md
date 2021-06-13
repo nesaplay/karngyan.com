@@ -481,7 +481,7 @@ Display Build Status of your project:
 
 Exempli Gratia: 
 
-<a href="https://github.com/karngyan/karngyan.github.io/blob/master/README.md" target="_blank">
+<a href="https://github.com/karngyan/karngyan.github.io/blob/master/README.md" target="_blank" rel="noreferrer">
     <img class="image" src="/images/git-leet-edition/travis-status.png" alt="Continuous Integration" class="center" width="40%">
 </a>
 <figcaption class="caption">Travis Status</figcaption>

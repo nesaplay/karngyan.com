@@ -147,7 +147,7 @@ and so on.
 
 We can also define hash functions for arbitrary objects like string, lists, tuples, multi data objects, etc. 
 
-For a string s, let H(s) be a hash function defined below where ASCII(x) returns the ASCII value of the character x. (For more check out <a href="https://www.asciitable.com" target="_blank">ASCII TABLE</a>)
+For a string s, let H(s) be a hash function defined below where ASCII(x) returns the ASCII value of the character x. (For more check out <a href="https://www.asciitable.com" target="_blank" rel="noreferrer">ASCII TABLE</a>)
 
 ```js
 function H(s):

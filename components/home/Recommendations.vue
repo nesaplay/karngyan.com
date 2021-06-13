@@ -1,16 +1,16 @@
 <template>
-  <div class="max-w-7xl py-4 mx-auto border-l border-r border-dashed border-gray-700">
-    <div class="max-w-prose text-center mx-auto py-6">
+  <div class="max-w-7xl mx-auto border-l border-r border-dashed border-gray-700">
+    <div class="max-w-prose text-center mx-auto py-4">
       <p class="text-xs leading-6 text-indigo-600 font-semibold tracking-wide lowercase">{{ $t('recommendations.subtext') }}</p>
-      <a :href="`https://linkedin.com/in/${$store.state.social.linkedin}`" target="_blank" class="mt-2 text-3xl hover:text-hot-pink leading-8 font-extrabold tracking-tight text-gray-500">{{ $t('recommendations.header') }}</a>
+      <a :href="`https://linkedin.com/in/${$store.state.social.linkedin}`" target="_blank" rel="noreferrer" class="mt-2 text-3xl hover:text-hot-pink leading-8 font-extrabold tracking-tight text-gray-500">{{ $t('recommendations.header') }}</a>
     </div>
     <section class="max-w-7xl mx-auto">
-      <div data-aos="fade-up" class="lg:grid lg:grid-cols-2 lg:gap-4 mb-4 space-y-4 lg:space-y-0 lg:items-start px-4">
+      <div data-aos="zoom-in" class="lg:grid lg:grid-cols-2 lg:gap-4 mb-4 space-y-4 lg:space-y-0 lg:items-start px-4">
         <div class="relative h-full bg-gray-900 rounded-lg shadow-lg text-base max-w-prose mx-auto lg:max-w-none">
           <blockquote class="relative">
             <div class="rounded-t-lg px-5 py-5 sm:px-10 sm:pt-10 sm:pb-8">
               <div class="flex flex-row">
-                <a href="https://www.linkedin.com/in/varun-jain-582b0215/" target="_blank">
+                <a href="https://www.linkedin.com/in/varun-jain-582b0215/" target="_blank" rel="noreferrer">
                   <cite class="flex items-center rounded-b-lg not-italic">
                     <div class="flex-shrink-0 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 rounded-full border border-hot-pink mr-4">
                       <img class="w-8 h-8 rounded-full bg-indigo-300" src="../../assets/arijit.jpeg" alt="Arijit">
@@ -36,7 +36,7 @@
           <blockquote class="relative">
             <div class="rounded-t-lg px-5 py-5 sm:px-10 sm:pt-10 sm:pb-8">
               <div class="flex flex-row">
-                <a href="https://www.linkedin.com/in/varun-jain-582b0215/" target="_blank">
+                <a href="https://www.linkedin.com/in/varun-jain-582b0215/" target="_blank" rel="noreferrer">
                   <cite class="flex items-center rounded-b-lg not-italic">
                     <div class="flex-shrink-0 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 rounded-full border border-hot-pink mr-4">
                       <img class="w-8 h-8 rounded-full bg-indigo-300" src="../../assets/john.jpeg" alt="John">
@@ -59,12 +59,12 @@
           </blockquote>
         </div>
       </div>
-      <div data-aos="fade-up" class="lg:grid lg:grid-cols-1 lg:gap-8 mb-4 lg:items-start px-4">
+      <div data-aos="zoom-in" class="lg:grid lg:grid-cols-1 lg:gap-8 mb-4 lg:items-start px-4">
         <div class="relative text-base max-w-prose mx-auto lg:max-w-none">
           <blockquote class="relative bg-gray-900 rounded-lg shadow-lg">
             <div class="rounded-t-lg px-5 py-5 sm:px-10 sm:pt-10 sm:pb-8">
               <div class="flex flex-row">
-                <a href="https://www.linkedin.com/in/varun-jain-582b0215/" target="_blank">
+                <a href="https://www.linkedin.com/in/varun-jain-582b0215/" target="_blank" rel="noreferrer">
                   <cite class="flex items-center rounded-b-lg not-italic">
                     <div class="flex-shrink-0 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 rounded-full border border-hot-pink mr-4">
                       <img class="w-8 h-8 rounded-full bg-indigo-300" src="../../assets/varun.jpeg" alt="Varun">

@@ -15,7 +15,7 @@ author:
 description: It’s a niche data structure with a great time complexity when answering range queries on static arrays. Have a quick read and add it to your library.
 ---
 
-I guess I am a fan of tables. Also I thought this will be a quick write up since my last blog had suggestions to convert it into a <a href="https://www.gitbook.com/" target="_blank">gitbook</a>. (It was that huge) Although I hope you like this one, it won't take much of your time.
+I guess I am a fan of tables. Also I thought this will be a quick write up since my last blog had suggestions to convert it into a <a href="https://www.gitbook.com/" target="_blank" rel="noreferrer">gitbook</a>. (It was that huge) Although I hope you like this one, it won't take much of your time.
 
 > Sparse Tables, it's probably a niche data structure with a great time complexity when answering range queries on static arrays.
 

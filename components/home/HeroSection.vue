@@ -25,16 +25,16 @@
                 <p class="mt-8 text-sm text-white uppercase tracking-wide font-semibold sm:mt-10">Worked at</p>
                 <div class="mt-5 w-full sm:mx-auto lg:ml-0">
                   <div class="flex flex-wrap items-start items-center justify-between">
-                    <a href="https://sendpost.io" target="_blank" class="flex items-center justify-center px-1">
+                    <a href="https://sendpost.io" target="_blank" rel="noreferrer" class="flex items-center justify-center px-1">
                       <SendPost class="h-8 rounded-sm sm:h-9" />
                     </a>
-                    <a href="https://amazon.in/" target="_blank" class="flex items-center justify-center px-1">
+                    <a href="https://amazon.in/" target="_blank" rel="noreferrer" class="flex items-center justify-center px-1">
                       <Amazon class="h-8 sm:h-9" />
                     </a>
-                    <a href="https://interviewready.io" target="_blank" class="flex items-center justify-center px-1">
+                    <a href="https://interviewready.io" target="_blank" rel="noreferrer" class="flex items-center justify-center px-1">
                       <InterviewReady class="h-8 p-0.5 sm:h-9" />
                     </a>
-                    <a href="https://crio.do" target="_blank" class="flex justify-center px-1">
+                    <a href="https://crio.do" target="_blank" rel="noreferrer" class="flex justify-center px-1">
                       <CrioDo class="h-8 sm:h-9" />
                     </a>
                   </div>
@@ -107,7 +107,7 @@
                   </div>
                 </div>
                 <div class="px-8 py-4 bg-gray-900 rounded-b-lg border-t border-gray-800 sm:px-10">
-                  <p class="text-xs leading-5 text-gray-500">By signing up, you agree to our <a href="https://www.getrevue.co/terms?locale=en" target="_blank" class="font-medium text-gray-400 hover:text-gray-400 hover:underline">Terms of Service</a>, and <a href="https://www.getrevue.co/privacy?locale=en" target="_blank" class="font-medium text-gray-400 hover:text-gray-400 hover:underline">Privacy Policy.</a></p>
+                  <p class="text-xs leading-5 text-gray-500">By signing up, you agree to our <a href="https://www.getrevue.co/terms?locale=en" target="_blank" rel="noreferrer" class="font-medium text-gray-400 hover:text-gray-400 hover:underline">Terms of Service</a>, and <a href="https://www.getrevue.co/privacy?locale=en" target="_blank" rel="noreferrer" class="font-medium text-gray-400 hover:text-gray-400 hover:underline">Privacy Policy.</a></p>
                 </div>
               </div>
             </div>

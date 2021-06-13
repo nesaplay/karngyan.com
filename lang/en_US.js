@@ -28,6 +28,10 @@ const strings = {
     header: 'blog',
     subtext: 'i try to write once in a while. let me know your thoughts in comments or mail@karngyan.com'
   },
+  recentBlog: {
+    header: 'recent blogs',
+    subtext: 'it takes a lot of time to write man'
+  },
   uses: {
     header: 'uses',
     subtext: 'a quick summary of what I use on a daily basis to code and some codestats.net flex'

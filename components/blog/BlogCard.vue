@@ -18,13 +18,13 @@
         </div>
         <div class="mt-2 flex items-center">
           <div class="flex-shrink-0">
-            <a target="_blank" :href="`https://twitter.com/${article.author.twitter}`">
+            <a target="_blank" rel="noreferrer" :href="`https://twitter.com/${article.author.twitter}`">
               <img class="h-9 w-9 rounded-full" :src="`${article.author.image}`" alt="Author Photo">
             </a>
           </div>
           <div class="ml-3">
             <p class="text-xs font-medium text-gray-200">
-              <a target="_blank" :href="`https://twitter.com/${article.author.twitter}`" class="hover:text-indigo-600">
+              <a target="_blank" rel="noreferrer" :href="`https://twitter.com/${article.author.twitter}`" class="hover:text-indigo-600">
                 {{ article.author.name }}
               </a>
             </p>

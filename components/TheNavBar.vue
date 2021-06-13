@@ -27,7 +27,7 @@
       </div>
       <div class="hidden md:flex">
           <div class="">
-            <a target="_blank" href="https://www.buymeacoffee.com/karngyan" class="inline-flex items-center px-3 py-2 border border-transparent text-xs font-bold rounded-md text-white bg-indigo-600 hover:text-white hover:bg-indigo-700 focus:outline-none focus:shadow-outline-gray focus:border-indigo-600 active:bg-indigo-600 transition duration-150 ease-in-out">
+            <a target="_blank" rel="noreferrer" href="https://www.buymeacoffee.com/karngyan" class="inline-flex items-center px-3 py-2 border border-transparent text-xs font-bold rounded-md text-white bg-indigo-600 hover:text-white hover:bg-indigo-700 focus:outline-none focus:shadow-outline-gray focus:border-indigo-600 active:bg-indigo-600 transition duration-150 ease-in-out">
               🍺 {{ $t('nav.buyMeACoffee') }}
             </a>
           </div>
@@ -70,7 +70,7 @@
           </div>
 
           <div>
-              <a target="_blank" href="https://www.buymeacoffee.com/karngyan" class="block w-full px-5 py-3 text-center font-medium text-gray-200 bg-indigo-700 hover:bg-indigo-600 hover:text-gray-200 focus:outline-none focus:bg-indigo-600 focus:text-gray-100 transition duration-150 ease-in-out">
+              <a target="_blank" rel="noreferrer" href="https://www.buymeacoffee.com/karngyan" class="block w-full px-5 py-3 text-center font-medium text-gray-200 bg-indigo-700 hover:bg-indigo-600 hover:text-gray-200 focus:outline-none focus:bg-indigo-600 focus:text-gray-100 transition duration-150 ease-in-out">
                 🍺 {{ $t('nav.buyMeACoffee') }}
               </a>
           </div>

@@ -13,7 +13,7 @@
   <div data-aos="zoom-in" class="max-w-4xl mx-4 sm:mx-auto bg-gray-900 shadow rounded-md overflow-hidden sm:rounded-lg">
     <div class="px-4 py-5 flex flex-row justify-between border-b border-indigo-600 sm:px-6">
       <div class="w-full">
-        <a href="https://codestats.net/users/karngyan" target="_blank">
+        <a href="https://codestats.net/users/karngyan" target="_blank" rel="noreferrer">
           <dl>
             <dt class="text-sm leading-6 font-normal text-hot-pink">
               Level {{ level }}
