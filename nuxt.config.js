@@ -74,7 +74,13 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     'nuxt-i18n',
+    '@nuxtjs/toast',
+    '@nuxtjs/sitemap'
   ],
+
+  toast: {
+    position: 'bottom-center'
+  },
 
   i18n: {
     lazy: true,

@@ -142,7 +142,7 @@ export default {
       }
       console.debug(data);
       if (this.email.trim() === '') {
-        this.toast('please enter your email address');
+        this.$toast.show('please enter your email address', { duration: 2000, theme: 'bubble'});
         this.isLoading = false;
         return
       }
@@ -155,21 +155,13 @@ export default {
       }).then((res) => res.json())
       .then(data => {
         console.debug(data);
-        this.toast(data.body.message)
+        this.$toast.success(data.body.message, { duration: 3000 })
         this.isLoading = false;
         this.email = '';
         this.firstName = '';
         this.lastName = '';
       })
     },
-    toast(msg, type) {
-      this.$buefy.toast.open({
-        duration: 5000,
-        message: msg,
-        type: type,
-        position: 'is-bottom',
-      });
-    }
   }
 }
 </script>
