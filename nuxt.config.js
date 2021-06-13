@@ -1,3 +1,14 @@
+const createSitemapRoutes = async () => {
+  let routes = [];
+  const { $content } = require('@nuxt/content')
+  const articles = await $content('articles').fetch();
+  for (const article of articles) {
+    routes.push(`blog/${article.slug}`);
+  }
+  return routes;
+}
+
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -77,6 +88,11 @@ export default {
     '@nuxtjs/toast',
     '@nuxtjs/sitemap'
   ],
+
+  sitemap: {
+    hostname: 'https://karngyan.com',
+    routes: createSitemapRoutes
+  },
 
   toast: {
     position: 'bottom-center'
