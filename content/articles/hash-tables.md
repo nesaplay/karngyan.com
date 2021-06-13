@@ -1,4 +1,5 @@
 ---
+id: 1
 title: hash tables - I
 createdAt: '2019-08-16 22:10:00'
 tags:

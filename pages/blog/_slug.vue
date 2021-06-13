@@ -41,7 +41,7 @@
               </div>
             </header>
 
-            <div class="prose dark:prose-dark my-4 prose-sm max-w-4xl mx-auto">
+            <div class="prose dark:prose-dark break-all my-4 prose-sm max-w-4xl mx-auto">
               <nuxt-content :document="article" />
             </div>
           </div>
@@ -106,4 +106,13 @@ export default {
 >>> .breaker::after {
   content: "• • •";
 }
+
+>>> .nuxt-content .caption {
+  @apply text-center;
+}
+
+>>> .nuxt-content img {
+  @apply mx-auto rounded-md;
+}
+
 </style>

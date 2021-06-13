@@ -1,12 +1,13 @@
 ---
-title: Understanding the Internet - noob edition
+id: 2
+title: understanding the internet - noob edition
 category: dev
-date: '2020-04-01 11:00:00'
-tag:
+createdAt: '2020-04-01 11:00:00'
+tags:
   - noob
   - internet
   - quarantine
-author: 
+author:
   name: karn
   twitter: gyankarn
   image: https://cdn.karngyan.com/bigheadkarngyan.png
@@ -76,7 +77,7 @@ Time to do an exercise, let's try **ping**.
 Ping is just a really short request. It just says hey, hey, hey, that's all it does. So, let's go in ping karngyan.com into your terminal.
 <div class="side-by-side">
     <div class="toleft">
-        <img class="image" src="{{ site.url }}/assets/images/the-internet-noob-edition/ping-karngyan.png" alt="ping karngyan.com">
+        <img class="image" src="/images/the-internet-noob-edition/ping-karngyan.png" alt="ping karngyan.com">
 			 <figcaption class="caption">ping karngyan.com (To kill, we just Ctrl+C)</figcaption>
     </div>
 		<div class="toright">
@@ -95,7 +96,7 @@ So, all it does is it maps domain names to IP addresses. And we need them becaus
 
 <div class="side-by-side">
     <div class="toright">
-        <img class="image" src="{{ site.url }}/assets/images/the-internet-noob-edition/domain.png" alt="Domain">
+        <img class="image" src="/images/the-internet-noob-edition/domain.png" alt="Domain">
 			 <figcaption class="caption">Domains</figcaption>
     </div>
 		<div class="toleft">
@@ -130,12 +131,12 @@ Let's do an exercise.
 #### Trace Routes
 I love trace routes.
 
-{% highlight bash %}
+```bash
 $ man traceroute #Traceroute manual
 $ traceroute google.com
-{% endhighlight %}
+```
 
-![Traceroute Google.com]({{ site.url }}/assets/images/the-internet-noob-edition/traceroute.png)
+![Traceroute Google.com](/images/the-internet-noob-edition/traceroute.png)
 <figcaption>traceroute google.com</figcaption>
 
 Instead of ping, which hits a server that replies back and says hey, I’m alive, Traceroute gives you a map of every single hop along that point. Traceroute gives you a map of every single hop along that point. Remember when I told you Internet is built on trusts in servers and nodes and switches. That's what we're doing, we're trying to reach **google.com** at **172.217.166.238** and we're hitting every server along the way.
@@ -158,8 +159,11 @@ May be you don't wanna pinged to death, which usually doesn't happen anymore. Bu
 But you can just overload the server with pending requests to handle. 
 
 I usually keep it alive, it helps me debug. It totally depends on you and that's the greatest thing about your own servers, you have complete control over it.
+
 <div class="breaker"></div>
+
 ### Packet
+
 > It's a little bit of information. 
 
 You can think of a packet like an envelope. And what does an envelope have in it? It’s got the address of where you’re trying to get to, and it’s got information about where you’re coming from, just in case when it has to come back. And inside a packet, we have information. That's what a packet is, it's just this base unit of information of how everything's transmitting.
