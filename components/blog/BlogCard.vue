@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="localePath(`/blog/${article.slug}`)" class="flex transition duration-700 ease-in-out transform hover:-translate-y-1 hover:scale-105 flex-col rounded-xl shadow-lg overflow-hidden" >
+  <nuxt-link :to="localePath(`/blog/${article.slug}`)" class="flex transition duration-700 ease-in-out transform hover:translate-y-0.5 hover:scale-105 flex-col rounded-xl shadow-lg overflow-hidden" >
       <div class="flex-1 bg-gray-900 p-5 flex flex-col justify-between">
         <div class="flex-1">
           <p class="text-xs font-medium text-hot-pink hover:text-hot-pink">
