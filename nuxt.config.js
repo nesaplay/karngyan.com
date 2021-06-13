@@ -5,6 +5,10 @@ const createSitemapRoutes = async () => {
   for (const article of articles) {
     routes.push(`blog/${article.slug}`);
   }
+  const projects = await $content('projects').fetch();
+  for (const project of projects) {
+    routes.push(`projects/${project.slug}`);
+  }
   return routes;
 }
 
