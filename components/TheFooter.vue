@@ -1,6 +1,6 @@
 <template>
   <footer class="bg-gray-800">
-    <div data-aos="fade-up" class="max-w-7xl border-l border-r border-dashed border-gray-700 mx-auto px-4 sm:px-0">
+    <div class="max-w-7xl border-l border-r border-dashed border-gray-700 mx-auto px-4">
       <div class="pt-5 pb-12 md:flex md:items-center md:justify-between">
         <div class="flex space-x-6 md:order-2">
           <a v-if="$store.state.social.facebook" target="_blank" :href="`https://facebook.com/${$store.state.social.facebook}`" class="text-gray-400 hover:text-gray-300">

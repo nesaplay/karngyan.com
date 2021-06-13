@@ -13,6 +13,13 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }
+
+::-moz-selection {
+    @apply bg-hot-pink text-white;
+}
+::selection {
+    @apply bg-hot-pink text-white;
+}
 </style>
 <script>
 

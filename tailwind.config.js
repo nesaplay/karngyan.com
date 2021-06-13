@@ -23,7 +23,7 @@ module.exports = {
         'gray-50': '#F4F4F4',
       },
       typography: (theme) => ({
-        light: {
+        dark: {
           css: [
             {
               color: theme('colors.gray.500'),
@@ -31,7 +31,7 @@ module.exports = {
                 color: theme('colors.gray.300'),
               },
               a: {
-                color: theme('colors.gray.200'),
+                color: theme('colors.indigo.500'),
               },
               strong: {
                 color: theme('colors.gray.200'),
@@ -43,7 +43,7 @@ module.exports = {
                 backgroundColor: theme('colors.gray.600'),
               },
               hr: {
-                borderColor: theme('colors.gray.200'),
+                borderColor: theme('colors.gray.700'),
               },
               blockquote: {
                 color: theme('colors.gray.200'),
@@ -63,16 +63,6 @@ module.exports = {
               },
               'figure figcaption': {
                 color: theme('colors.gray.400'),
-              },
-              code: {
-                color: theme('colors.white'),
-              },
-              'a code': {
-                color: theme('colors.white'),
-              },
-              pre: {
-                color: theme('colors.gray.200'),
-                backgroundColor: theme('colors.gray.800'),
               },
               thead: {
                 color: theme('colors.white'),

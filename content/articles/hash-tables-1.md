@@ -13,11 +13,8 @@ author:
 description: this blog is quite technical and monotonous. it goes about defining hash tables, hash functions, it's properties and collision resolution techniques.
 ---
 
-Hey, everyone!
+Hey, everyone! We're going to talk about one of the most remarkable data structure of all times, Hash Tables.
 
-We're going to talk about one of the most remarkable data structure of all times, Hash Tables.
-
-<div class="breaker"></div>
 ### Outline
 
 * [What is a **Hash Table** ? ](#ht-intro)
@@ -28,7 +25,8 @@ We're going to talk about one of the most remarkable data structure of all times
 * [Separate Chaining](#sep-chain)
 * [Open Addressing Basics](#open-addr)
 
----
+<div class="breaker"></div>
+
 ### <a name="ht-intro"></a>What is a Hash table?
 
 A **Hash table (HT)** is a data structure that provides a mapping from keys to values using a technique called **hashing**.
@@ -41,9 +39,9 @@ A **Hash table (HT)** is a data structure that provides a mapping from keys to v
 </colgroup>
 <thead>
 <tr class="header">
-<th>Key(name)</th>
+<th align="center" class="text-gray-200">Key(name)</th>
 <th></th>
-<th>Value(fav color)</th>
+<th align="center" class="text-gray-200">Value(fav color)</th>
 </tr>
 </thead>
 <tbody>
@@ -82,9 +80,9 @@ I parsed [Shakespeare's Romeo and Juliet](http://shakespeare.mit.edu/romeo_julie
 </colgroup>
 <thead>
 <tr class="header">
-<th>Key(word)</th>
+<th align="center" class="text-gray-200">Key(word)</th>
 <th></th>
-<th>Value(frequency)</th>
+<th align="center" class="text-gray-200">Value(frequency)</th>
 </tr>
 </thead>
 <tbody>
@@ -131,7 +129,8 @@ I parsed [Shakespeare's Romeo and Juliet](http://shakespeare.mit.edu/romeo_julie
 </tbody>
 </table>
 
----
+<div class="text-center my-2">• • •</div>
+
 ### <a name="hash-function"></a>What is a hash function?
 
 To be able to understand, how a mapping is constructed between key-value pairs we first need to talk about hash functions.
@@ -149,7 +148,7 @@ We can also define hash functions for arbitrary objects like string, lists, tupl
 
 For a string s, let H(s) be a hash function defined below where ASCII(x) returns the ASCII value of the character x. (For more check out <a href="https://www.asciitable.com" target="_blank">ASCII TABLE</a>)
 
-{% highlight js %}
+```js
 function H(s):
 	sum := 0
 	for char in s:
@@ -162,11 +161,12 @@ function H(s):
 * H("ABC") = (65 + 66 + 67) mod 50 = 48
 * H("Z") = (90) mod 50 = 40
 */
-{% endhighlight %}
+```
 
 These are certain arbitrary hash function, we will get to some sophisticated hash functions later in the post.
 
----
+<div class="text-center my-2">• • •</div>
+
 ### <a name="hf-prop"></a>Properties of hash functions
 
 > If H(x) = H(y) then objects x and y **might be equal,** but if H(x) != H(y) then x and y are **certainly not equal.**
@@ -178,7 +178,7 @@ If we precomputed **H(file1)** and **H(file2)** first we should compare those ha
 
 ***NOTE**: Hash functions for files are more sophisticated than those used for hashtables. Instead for files we use what are called cryptographic hash functions also called checksums.*
 
----
+
 > A hash function **H(x)** must be **deterministic**.
 
 This means that if H(x) = y then H(x) must always produce y and never another value.
@@ -186,12 +186,12 @@ This may seem obvious, but it is critical to the functionality of a hash functio
 
 Example of a non-deterministic hash function:
 
-{% highlight js %}
+```js
 counter := 0
 function H(x):
 	counter = counter + 1
 	return (x + counter) mod 13
-{% endhighlight %}
+```
 
 The first time called H(2) = 3, but if called again H(2) = 4
 
@@ -204,18 +204,20 @@ A **hash collision** is when two objects x, y hash to the same value (i.e. H(x) 
 We are now able to answer a central question about the types of keys we are allowed to use in our hashtable:
 
 Q: What makes a key of type T **hashable** ?
+
 <div class="spoiler"><p>Since we are going to use hash functions in the implementation of our hash table we need our hash functions to be deterministic. To enforce this behaviour, we demand that the <strong>keys used in our hash table are immutable</strong> data types. Hence, if a key of type T is immutable, and we have a hash function H(k) defined for all keys k of type T then we say a key of type T is hashable.</p></div>
 
-<div class="breaker"></div>
-### <a name="hf-how"></a>How does a Hash Table Works ?
+<div class="text-center my-2">• • •</div>
+
+### <a name="hf-how"></a>How does a Hash Table Work ?
 
 Ideally we would like to have a very fast insertion, lookup and removal time for the data we are placing within our hash table.
 
 Remarkably, we can achieve all this in **O(1)**\* time using a **hash function as a way to index into a hash table.**
 
-\* The constant time behaviour attributed to hash tables is only true if you have a good **uniform hash function!**
+> The constant time behaviour attributed to hash tables is only true if you have a good **uniform hash function!**
 
-<div class="side-by-side">
+<div>
     <div class="toleft">
         <p>Think of the hash table on the right as an indexable block of memory (an array) and we can only access its entries using the value given to us by our hash function <strong>H(x)</strong>
 				<br><br>
@@ -223,19 +225,17 @@ Remarkably, we can achieve all this in **O(1)**\* time using a **hash function a
 				<center>H(x) = x<sup>2</sup> + 3 mod 10</center>
 				</p>
     </div>
-
     <div class="toright">
-        <img class="image" src="{{ site.url }}/assets/images/hash-tables/ht1.png" alt="Empty Hash Table">
-        <figcaption class="caption">Empty Hash Table</figcaption>
+        <img class="image rounded-lg" src="/images/hash-tables/ht1.png" alt="Empty Hash Table">
+        <figcaption class="caption text-center">Empty Hash Table</figcaption>
     </div>
 </div>
 
 <div class="side-by-side">
     <div class="toleft">
-        <img class="image" src="{{ site.url }}/assets/images/hash-tables/ht3.png" alt="Not Empty Hash Table">
-        <figcaption class="caption">After a few entries</figcaption>
+        <img class="image rounded-lg" src="/images/hash-tables/ht3.png" alt="Not Empty Hash Table">
+        <figcaption class="caption text-center">After a few entries</figcaption>
     </div>
-
     <div class="toright">
         <p>
 				To <strong>insert</strong> the following key-value pairs:
@@ -265,7 +265,9 @@ For example, users with ranks 2 and 8 hash to the same value, i.e. 7!!
 <strong>Open Addressing</strong> deals with hash collisions by finding another place within the hash table for the object to go by offsetting it from the position to which it hashed to.</p></div>
 
 ---
+
 ### <a name="complexity"></a>Complexity
+
 The time complexity of hash tables is actually pretty remarkable, in fact it's amazing.
 <style>
 table.cTable {
@@ -321,6 +323,7 @@ table.cTable thead {
 * The constant time behaviour attributed to hash tables is only true if you have a good **uniform hash function**!
 
 <div class="breaker"></div>
+
 ### <a name="sep-chain"></a>Separate Chaining
 
 As I mentioned earlier, **Separate Chaining** is one of many strategies to deal with hash collisions by maintaining a data structure (usually a linked list) to hold all the different values which hashed to a particular value.
@@ -387,7 +390,7 @@ Suppose we have a hash table that will store (name, age) key-value pairs and we 
 </table>
 
 
-![Separate Chaining Linked List Image]({{ site.url }}/assets/images/hash-tables/separate-chaining.png)
+![Separate Chaining Linked List Image](/images/hash-tables/separate-chaining.png)
 <figcaption class="caption">Linked List Separate Chaining</figcaption>
 
 For lookups, suppose we need to find age of "Ryan", we hash the key "Ryan" to obtain the value (index) 1.
@@ -423,9 +426,273 @@ Q: Can I use another data structure to model the bucket behaviour required for t
 Here's my implementation of Hash Tables using Separate Chaining in C++:
 
 [Skip to the bottom of this 262 line gist](#open-addr)
-{% gist karngyan/79d47b2d3f68aa230fee99a5f1bf0471 %}
+```cpp
+/*
+
+	An implementation of a hash-table 
+	using separate chaining with a linked list.
+
+	@author: Gyan Prakash Karn, karngyan@gmail.com
+
+*/
+
+#include<iostream>
+#include<limits>
+#include<vector>
+#include<algorithm>
+#include<string>
+#include<cfloat>
+
+template<class K, class V>
+class Entry {
+
+	template<class A, class B>
+	friend std::ostream& operator<<(std::ostream &strm, const Entry<A, B> & entry) {
+		return strm << entry.key << " => " << entry.value;
+	}
+
+public:
+
+	std::hash<K> H;
+	long long int hash;
+	K key;
+	V value;
+
+	template<class A, class B>
+	Entry(A k, B v) {
+		key = k;
+		value = v;
+		hash = H(key);
+	}
+
+	bool operator== (const Entry & other) {
+		if (hash != other.hash) return false;
+		return key == other.key;
+	}
+};
+
+
+
+template<class K, class V>
+class HashTableSeparateChaining {
+	
+	constexpr static int DEFAULT_CAPACITY = 3;
+	constexpr static double DEFAULT_LOAD_FACTOR = 0.75;
+	double maxLoadFactor;
+	int capacity, threshold, sze = 0;
+	std::vector<std::vector <Entry<K, V>>> table;
+	std::hash<K> H;
+
+
+public:
+	//designated constructor
+	HashTableSeparateChaining(int cap, double mLF) {
+		if (cap < 0) 
+			throw std::invalid_argument("Illegal capacity");
+		if (mLF <= 0 or mLF == DBL_MAX) 
+			throw std::invalid_argument("Illegal maxLoadFactor");
+		maxLoadFactor = mLF;
+		capacity = cap;
+		threshold = (int) (capacity * maxLoadFactor);
+		table.clear();
+		table.resize(capacity);
+	}
+
+	HashTableSeparateChaining(int cap) : HashTableSeparateChaining(cap, DEFAULT_LOAD_FACTOR){}
+	
+	HashTableSeparateChaining() : HashTableSeparateChaining(DEFAULT_CAPACITY, DEFAULT_LOAD_FACTOR){}
+
+	// return number of elements currently inside the hash table
+	int size() {
+		return sze;
+	}
+
+	// returns true/false depending on whether teh hash-table is empty
+	bool empty() {
+		return sze == 0;
+	}
+
+	// clear all content
+	void clear() {
+		for (int i = 0 ; i < capacity ; ++i) table[i].clear();
+		sze = 0;
+	}
+
+	// returns true/false depending on whether a key is in the hash table
+	bool hasKey(K key) {
+		int bucketIndex = normalizeIndex(H(key));
+		return bucketSeekEntry(bucketIndex, key) != NULL;
+	}
+
+	bool containsKey(K key) {
+		return hasKey(key);
+	}
+
+	// insert, put, add all place a value in the hash-table
+	void put(K key, V value) {
+		insert(key, value);
+	}
+
+	void add(K key, V value) {
+		insert(key, value);
+	}
+
+	void insert(K key, V value) {
+		Entry<K, V> newEntry(key, value);
+		int bucketIndex = normalizeIndex(newEntry.hash);
+		bucketInsertEntry(bucketIndex, newEntry);
+	}
+
+	// Gets a key's values from the HT and returns the value.
+	V* get(K key) {
+		int bucketIndex = normalizeIndex(H(key));
+		Entry<K, V> *entry = bucketSeekEntry(bucketIndex, key);
+		if (entry != NULL) return entry->value;
+		return NULL;
+	}
+
+	// Removes a key from the HT and returns the value.
+	V* remove(K key) {
+		int bucketIndex = normalizeIndex(H(key));
+		return bucketRemoveEntry(bucketIndex, key);
+	}
+
+	// Returns the list of keys found within the hash table
+	std::vector<K> keys() {
+
+		std::vector<K> keys(size());
+		for (auto bucket : table) {
+			if (bucket != NULL) {
+				for (auto entry : bucket) {
+					keys.push_back(entry.key);
+				}
+			}
+		}
+
+		return keys;
+	}
+
+	// Returns the list of values found within the hash table
+	std::vector<V> values() {
+
+		std::vector<V> values(size());
+		for (auto bucket : table) {
+			if (bucket != NULL) {
+				for (auto entry : bucket) {
+					values.push_back(entry.value);
+				}
+			}
+		}
+
+		return values;
+	}
+
+	void showAll() {
+		std::cout << "{\n";
+		for (int i = 0 ; i < capacity ; ++i) {
+			if (table[i].size()) {
+				for (auto entry : table[i]) {
+					std::cout << "\t" << entry << "\n";
+				}
+			}
+		}
+		std::cout << "}\n";
+	}
+
+private:
+	// converts a hash value to an index
+	// basically removing negative sign (i.e. hghest bit)
+	// placing it in domain [0, capacity)
+	int normalizeIndex(int keyHash) {
+		return (keyHash & 0x7FFFFFFF) % capacity;
+	}
+
+	// Removes an entry from a given bucket if exists
+	V* bucketRemoveEntry(int bucketIndex, K key) {
+		Entry<K, V> *entry = bucketSeekEntry(bucketIndex, key);
+
+		if (entry != NULL) {
+			std::vector <Entry<K, V>> &links = table[bucketIndex];
+			auto nodeToErase = std::find(links.begin(), links.end(), *entry);
+			links.erase(nodeToErase);
+			--sze;
+			return &(entry->value);
+		} else return NULL;
+	}
+
+	// Inserts an entry in a given bucket only if the entry does not
+	// alreasy exist in the given bucket, but if it does -> update it
+	void bucketInsertEntry(int bucketIndex, Entry<K, V> entry) {
+
+		std::vector <Entry<K, V>> &bucket = table[bucketIndex];
+
+		Entry<K, V> * existentEntry = bucketSeekEntry(bucketIndex, entry.key);
+		if (existentEntry != NULL) {
+			existentEntry->value = entry.value;
+		} else {
+			bucket.push_back(entry);
+			if (++sze > threshold) resizeTable();
+		}
+	}
+
+	// Finds and returns a particular entry in a given bucket if it exists, 
+	// return NULL otherwise
+	Entry<K, V> * bucketSeekEntry(int bucketIndex, K key) {
+
+		if (table[bucketIndex].empty()) return NULL;
+
+		for (size_t i = 0 ; i < table[bucketIndex].size() ; ++i) {
+			Entry<K, V> * entry = &table[bucketIndex][i];
+			if (entry->key == key) return entry;
+		}
+
+		return NULL;
+	}
+
+	// Resizes the internal table holding buckets of entries
+	void resizeTable() {
+
+		int oldCapacity = capacity;
+		capacity *= 2;
+		threshold = (int) (capacity * maxLoadFactor);
+
+		std::vector< std::vector <Entry<K, V>> > newTable(capacity);
+		int tableLength = oldCapacity;
+		for (int i = 0 ; i < tableLength ; ++i) {
+			if (table[i].size()) {
+				for (Entry<K, V> entry : table[i]) {
+					int bucketIndex = normalizeIndex(entry.hash);
+					newTable[bucketIndex].push_back(entry); 
+				}
+			}
+
+			// Help the GC
+			table[i].clear();
+		}
+
+		table = newTable;
+	}
+};
+
+int main() {
+
+	HashTableSeparateChaining<std::string, std::string> map;
+	map.insert("tourist", "red");
+	map.insert("rpuneet", "purple");
+	
+	map.showAll();
+	
+	map.remove("rpuneet");
+	map.showAll();
+
+	
+	return 0;
+	
+}
+```
 
 <div class="breaker"></div>
+
 ### <a name="open-addr"></a>Open Addressing
 
 #### Let's go over some basics!
@@ -447,12 +714,11 @@ This means we need to care a great deal about the size of our hash table and how
 **Load factor** = (items in table) / (size of table)
 
 <div class="side-by-side">
-    <div class="toleft">
+    <div>
         <img class="image" src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Hash_table_average_insertion_time.png" alt="ChainingVProbing">
         <figcaption class="caption">Source: Wikipedia</figcaption>
     </div>
-
-    <div class="toright">
+    <div>
         <p>The O(1) constant time behaviour attributed to hash tables assumes the load factor (α) is kept below a certain fixed value. This means once α > <strong>threshold</strong> we need to grow the table size (ideally exponentially, e.g. double). As it shows in the graph.</p><hr>
 				<p>
 				When we want to insert a key-value pair (k, v) into the hash table we hash the key and obtain an original position for where this key-value pair belongs, i.e. H(k).
@@ -486,7 +752,7 @@ P(k, x) = x\*RNG(H(k), x), RNG is a random number generator function seeded with
 
 General insertion method for open addressing on a table of size N goes as follows:
 
-{% highlight js %}
+```js
 x := 1
 keyHash := H(k)
 index := keyHash
@@ -496,7 +762,7 @@ while table[index] != null:
 	x = x+1
 	
 insert (k, v) at table[index] 
-{% endhighlight %}
+```
 
 Here H(k) is the hash function for the key k and P(k, x) is the probing function.
 

@@ -74,7 +74,6 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     'nuxt-i18n',
-    'nuxt-buefy',
   ],
 
   i18n: {
@@ -100,7 +99,12 @@ export default {
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {
     liveEdit: true,
-    dir: 'content'
+    dir: 'content',
+    markdown: {
+      prism: {
+        theme: 'prism-themes/themes/prism-atom-dark.css'
+      }
+    }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
