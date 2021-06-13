@@ -15,9 +15,7 @@
 </template>
 
 <script>
-import BlogCard from "~/components/blog/BlogCard";
 export default {
-  components: {BlogCard},
   head() {
     return {
       title: 'Blog -- Karn | Friendly Neighborhood Developer'

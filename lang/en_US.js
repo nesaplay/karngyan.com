@@ -1,4 +1,5 @@
 const strings = {
+  download: 'download',
   nav: {
     home: 'home',
     blog: 'blog',

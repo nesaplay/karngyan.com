@@ -64,6 +64,7 @@ export default {
     '@/components',
     '@/components/home',
     '@/components/logos',
+    '@/components/blog',
   ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules

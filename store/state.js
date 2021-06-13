@@ -22,7 +22,8 @@ const state = {
   },
   resume: {
     enabled: true,
-    pdfUrl: '/RESUME_GYAN_KARN.pdf'
+    pdfUrl: '/RESUME_GYAN_KARN.pdf',
+    pdfUrlDark: '/RESUME_GYAN_KARN_DARK.pdf'
   },
   uses: {
     enabled: true,
