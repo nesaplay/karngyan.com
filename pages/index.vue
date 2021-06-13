@@ -3,7 +3,7 @@
     <HeroSection/>
     <GithubCalendar />
     <Recommendations />
-    <RecentBlog :articles="articles"/>
+    <LazyRecentBlog v-if="articles" :articles="articles"/>
   </div>
 </template>
 
@@ -16,20 +16,28 @@ export default {
       ],
     }
   },
-  async asyncData({ $content }) {
+  data() {
+    return {
+      articles: null
+    }
+  },
+  async created() {
     const fetchDocsLabel = 'fetchAllArticles'
     console.time(fetchDocsLabel)
-    const articles = await $content('articles')
-      .without(['body', 'toc', 'dir', 'extension', 'path', 'tags'])
-      .limit(3)
-      .skip(0)
-      .sortBy('createdAt', 'desc')
-      .fetch()
-    console.timeEnd(fetchDocsLabel)
-    return {
-      articles
+    try {
+      const articles = await this.$content('articles')
+        .without(['body', 'toc', 'dir', 'extension', 'path', 'tags'])
+        .limit(3)
+        .skip(0)
+        .sortBy('createdAt', 'desc')
+        .fetch()
+      this.articles = articles
+    } catch (e) {
+      console.error(e)
+    } finally {
+      console.timeEnd(fetchDocsLabel)
     }
-  }
+  },
 }
 </script>
 

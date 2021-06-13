@@ -5,7 +5,7 @@
         <p class="text-xs leading-6 text-indigo-600 font-semibold tracking-wide lowercase">{{ $t('recentBlog.subtext') }}</p>
         <nuxt-link :to="localePath('/blog')" class="mt-2 text-3xl hover:text-hot-pink leading-8 font-extrabold tracking-tight text-gray-500">{{ $t('recentBlog.header') }}</nuxt-link>
       </div>
-      <div data-aos="zoom-in" class="mt-5 gap-4 mx-4 sm:mx-auto grid max-w-5xl lg:grid-cols-3">
+      <div data-aos="zoom-in" class=" gap-4 mx-4 sm:mx-auto grid max-w-5xl lg:grid-cols-3">
         <BlogCard v-for="article in articles" :key="article.slug" :article="article" />
       </div>
     </div>
