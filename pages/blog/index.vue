@@ -25,7 +25,7 @@ export default {
     const fetchDocsLabel = 'fetchAllArticles'
     console.time(fetchDocsLabel)
     const articles = await $content('articles')
-      .without(['body', 'toc'])
+      .without(['body', 'toc', 'dir', 'extension', 'path', 'tags'])
       .sortBy('createdAt', 'desc')
       .fetch()
     console.timeEnd(fetchDocsLabel)

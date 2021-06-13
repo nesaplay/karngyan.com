@@ -22,12 +22,13 @@ export default {
     }
   },
   async asyncData({ $content }) {
+    const fetchDocsLabel = 'fetchAllProjects'
+    console.time(fetchDocsLabel)
     const projects = await $content('projects')
       .without(['body', 'toc'])
       .sortBy('id', 'asc')
       .fetch()
-
-    console.debug(projects)
+    console.timeEnd(fetchDocsLabel)
     return {
       projects
     }
