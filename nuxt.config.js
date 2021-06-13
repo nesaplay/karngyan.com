@@ -71,8 +71,8 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/dotenv',
   ],
 
   googleAnalytics: {
@@ -82,14 +82,36 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    // https://go.nuxtjs.dev/content
+    '@nuxtjs/firebase',
     '@nuxt/content',
     'nuxt-i18n',
     '@nuxtjs/toast',
     '@nuxtjs/sitemap'
   ],
+
+  firebase: {
+    config: {
+      apiKey: process.env.API_KEY,
+      authDomain: process.env.AUTH_DOMAIN,
+      projectId: process.env.PROJECT_ID,
+      storageBucket: process.env.STORAGE_BUCKET,
+      messagingSenderId: process.env.MESSAGING_SENDER_ID,
+      appId: process.env.APP_ID,
+      measurementId: process.env.MEASUREMENT_ID
+    },
+    services: {
+      auth: {
+        persistence: 'local',
+        initialize: {
+          onAuthStateChangedAction: 'authAction',
+          subscribeManually: false
+        },
+        ssr: false,
+      },
+      firestore: true
+    }
+  },
 
   sitemap: {
     hostname: 'https://karngyan.com',
@@ -98,6 +120,10 @@ export default {
 
   toast: {
     position: 'bottom-center'
+  },
+
+  router: {
+    middleware: 'auth'
   },
 
   i18n: {

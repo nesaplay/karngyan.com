@@ -6,7 +6,9 @@ const strings = {
     projects: 'projects',
     uses: 'uses',
     resume: 'résumé',
-    buyMeACoffee: 'buy me a beer'
+    buyMeACoffee: 'buy me a beer',
+    signIn: 'sign in',
+    signOut: 'sign out'
   },
   hero: {
     iBlogTech: 'i blog tech',

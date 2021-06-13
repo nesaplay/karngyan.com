@@ -38,7 +38,8 @@ const state = {
   },
   recommendations: {
     enabled: true
-  }
+  },
+  user: null,
 }
 
 export default function () {

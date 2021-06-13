@@ -25,12 +25,16 @@
           </button>
         </div>
       </div>
+<!--      <div class="hidden md:flex">-->
+<!--          <div class="">-->
+<!--            <a target="_blank" rel="noreferrer" href="https://www.buymeacoffee.com/karngyan" class="inline-flex items-center px-3 py-2 border border-transparent text-xs font-bold rounded-md text-white bg-indigo-600 hover:text-white hover:bg-indigo-700 focus:outline-none focus:shadow-outline-gray focus:border-indigo-600 active:bg-indigo-600 transition duration-150 ease-in-out">-->
+<!--              🍺 {{ $t('nav.buyMeACoffee') }}-->
+<!--            </a>-->
+<!--          </div>-->
+<!--      </div>-->
       <div class="hidden md:flex">
-          <div class="">
-            <a target="_blank" rel="noreferrer" href="https://www.buymeacoffee.com/karngyan" class="inline-flex items-center px-3 py-2 border border-transparent text-xs font-bold rounded-md text-white bg-indigo-600 hover:text-white hover:bg-indigo-700 focus:outline-none focus:shadow-outline-gray focus:border-indigo-600 active:bg-indigo-600 transition duration-150 ease-in-out">
-              🍺 {{ $t('nav.buyMeACoffee') }}
-            </a>
-          </div>
+        <div v-if="!user" @click="signInUser" class="active cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-bold">{{ $t('nav.signIn')}}</div>
+        <div v-else @click="signOutUser" class="active cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-bold">{{ $t('nav.signOut')}}</div>
       </div>
     </div>
   </div>
@@ -68,11 +72,14 @@
             <nuxt-link :to="localePath('/uses')" class="flex px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-gray-100 hover:bg-gray-600 focus:outline-none focus:text-gray-100 focus:bg-gray-500 transition duration-150 ease-in-out" role="menuitem">{{ $t('nav.uses')}}</nuxt-link>
             <nuxt-link :to="localePath('/resume')" class="flex px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-gray-100 hover:bg-gray-600 focus:outline-none focus:text-gray-100 focus:bg-gray-500 transition duration-150 ease-in-out" role="menuitem">{{ $t('nav.resume')}}</nuxt-link>
           </div>
-
+<!--          <div>-->
+<!--              <a target="_blank" rel="noreferrer" href="https://www.buymeacoffee.com/karngyan" class="block w-full px-5 py-3 text-center font-medium text-gray-200 bg-indigo-700 hover:bg-indigo-600 hover:text-gray-200 focus:outline-none focus:bg-indigo-600 focus:text-gray-100 transition duration-150 ease-in-out">-->
+<!--                🍺 {{ $t('nav.buyMeACoffee') }}-->
+<!--              </a>-->
+<!--          </div>-->
           <div>
-              <a target="_blank" rel="noreferrer" href="https://www.buymeacoffee.com/karngyan" class="block w-full px-5 py-3 text-center font-medium text-gray-200 bg-indigo-700 hover:bg-indigo-600 hover:text-gray-200 focus:outline-none focus:bg-indigo-600 focus:text-gray-100 transition duration-150 ease-in-out">
-                🍺 {{ $t('nav.buyMeACoffee') }}
-              </a>
+              <div v-if="!user" @click="signInUser" class="block w-full px-5 py-3 text-center font-medium text-gray-200 bg-indigo-700 hover:bg-indigo-600 hover:text-gray-200 focus:outline-none focus:bg-indigo-600 focus:text-gray-100 transition duration-150 ease-in-out">{{ $t('nav.signIn') }}</div>
+              <div v-else @click="signOutUser" class="block w-full px-5 py-3 text-center font-medium text-gray-200 bg-indigo-700 hover:bg-indigo-600 hover:text-gray-200 focus:outline-none focus:bg-indigo-600 focus:text-gray-100 transition duration-150 ease-in-out">{{ $t('nav.signOut') }}</div>
           </div>
         </div>
       </div>
@@ -82,15 +89,36 @@
 </template>
 
 <script>
-import TheLogo from "~/components/logos/TheLogo";
 export default {
-  name: "TheNavBar",
-  components: {TheLogo},
+  computed: {
+    user() {
+      return this.$store.state.user
+    }
+  },
   data() {
     return {
-      mobileMenuOpen: false
+      mobileMenuOpen: false,
+      toastOptions: { duration: 3000, theme: 'bubble' }
     }
-  }
+  },
+  methods: {
+    async signInUser() {
+      this.mobileMenuOpen = false
+      try {
+        const user = await this.$store.dispatch('signInUserWithGoogle')
+        console.debug('user:', user)
+        this.$toast.success(`welcome ${user.displayName.toLowerCase()}`, this.toastOptions)
+      } catch (e) {
+        console.error(e)
+        this.$toast.error(e.toString(), this.toastOptions)
+      }
+    },
+    signOutUser() {
+      this.mobileMenuOpen = false
+      this.$store.dispatch('signOut')
+      this.$toast.show('see you next time 👋', this.toastOptions)
+    }
+  },
 }
 </script>
 
