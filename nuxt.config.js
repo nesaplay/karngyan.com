@@ -58,6 +58,7 @@ export default {
     { src: '~/plugins/directives.js', ssr: false},
     { src: '~/plugins/aos.js', ssr: false},
     { src: '~/plugins/vueGtag.js', ssr: false},
+    { src: '~/plugins/vueClapButton.js', ssr: false},
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

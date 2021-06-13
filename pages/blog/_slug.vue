@@ -47,6 +47,9 @@
           </div>
 
         </div>
+        <div class="my-6">
+          <Like :slug="article.slug" />
+        </div>
         <div id="comments" class="border-t border-gray-700 border-dashed mt-6 py-5">
           <CommentInput :slug="article.slug"/>
         </div>

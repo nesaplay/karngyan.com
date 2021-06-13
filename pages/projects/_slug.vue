@@ -41,7 +41,15 @@
           </div>
 
         </div>
-        <div id="comments"></div>
+        <div class="my-6">
+          <Like :slug="project.slug" />
+        </div>
+        <div id="comments" class="border-t border-gray-700 border-dashed mt-6 py-5">
+          <CommentInput :slug="project.slug"/>
+        </div>
+        <div class="space-y-4 max-w-7xl">
+          <Comment v-for="(comment, index) in comments" :comment="comment"  :key="index" />
+        </div>
       </article>
     </div>
   </div>
@@ -83,8 +91,32 @@ export default {
         top: 0,
         behavior: 'smooth'
       })
+    },
+    cmp(a, b) {
+      if (a.created < b.created) return 1
+      if (a.created > b.created) return -1
+      return 0
     }
-  }
+  },
+  computed: {
+    comments() {
+      const comments = [ ...(this.$store.state.comments[this.project.slug] ? this.$store.state.comments[this.project.slug] : [])]
+      return comments.sort(this.cmp)
+    }
+  },
+  data() {
+    return {
+      toastOptions: { duration: 2000, theme: 'bubble' }
+    }
+  },
+  async fetch() {
+    try {
+      await this.$store.dispatch('fetchComments', {slug: this.project.slug})
+    } catch (e) {
+      this.$toast.error(e.toString(), this.toastOptions)
+      console.error(e)
+    }
+  },
 }
 </script>
 

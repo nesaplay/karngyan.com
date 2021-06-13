@@ -41,7 +41,7 @@ const state = {
   },
   user: null,
   comments: {},
-  claps: {}
+  likes: {}
 }
 
 export default function () {

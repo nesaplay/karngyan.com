@@ -1,3 +1,5 @@
+import {query} from "vue-gtag";
+
 export default {
   // nuxt handles invoking this when firebaseAuthStateChanges
   async authAction({dispatch, state, commit}, {authUser}) {
@@ -88,5 +90,42 @@ export default {
             reject(e)
         })
     })
-  }
+  },
+
+  fetchLikes({commit, state}, {slug}) {
+    return new Promise((resolve, reject) => {
+      this.$fire.firestore.collection('likes').where('slug', '==', slug)
+        .get()
+        .then((querySnapshot) => {
+          if (querySnapshot.empty) {
+            if (state.user) {
+              this.$fire.firestore.collection('likes').add({
+                slug,
+                likes: 0
+              }).then((docRef) => {
+                resolve({count: 0, id: docRef.id})
+              })
+            } else {
+              resolve({count: 0, id: 0})
+            }
+          } else {
+            querySnapshot.forEach((doc) => {
+              const like = { ...doc.data() }
+              resolve({count: like.likes, id: doc.id})
+            })
+          }
+        })
+        .catch((e) => {
+            reject(e)
+        })
+    })
+  },
+
+  incrementLikes({commit, state}, {count, slug, id}) {
+    const like = {
+      slug,
+      likes: this.$fireModule.firestore.FieldValue.increment(count)
+    }
+    this.$fire.firestore.collection('likes').doc(id).update(like)
+  },
 }
