@@ -57,6 +57,7 @@ export default {
     { src: '~/plugins/vuetyper.js', ssr: false},
     { src: '~/plugins/directives.js', ssr: false},
     { src: '~/plugins/aos.js', ssr: false},
+    { src: '~/plugins/vueGtag.js', ssr: false},
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -72,11 +73,10 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/google-analytics'
   ],
 
   googleAnalytics: {
-    id: 'G-3S38B2ZY34'
+    id: 'G-7GV60QQY22'
   },
 
 

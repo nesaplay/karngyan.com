@@ -25,10 +25,10 @@
     "pdfvuer": "^1.8.3",
     "prism-themes": "^1.7.0",
     "reading-time": "^1.3.0",
+    "vue-gtag": "^1.16.1",
     "vue-typer": "^1.2.0"
   },
   "devDependencies": {
-    "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/tailwindcss": "^4.0.3",
     "@tailwindcss/line-clamp": "^0.2.1",
     "postcss": "^8.2.12",

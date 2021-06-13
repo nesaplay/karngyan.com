@@ -8,7 +8,7 @@
         {{ $t('blog.subtext') }}
       </p>
     </div>
-    <div data-aos="zoom-in" class="mt-5 gap-4 mx-4 grid divide-y divide-gray-700 divide-dashed max-w-none lg:grid-cols-3">
+    <div data-aos="zoom-in" class="mt-5 gap-4 mx-4 grid max-w-none lg:grid-cols-3">
       <BlogCard v-for="article in articles" :key="article.slug" :article="article" />
     </div>
   </div>
@@ -22,10 +22,13 @@ export default {
     }
   },
   async asyncData({ $content }) {
+    const fetchDocsLabel = 'fetchAllArticles'
+    console.time(fetchDocsLabel)
     const articles = await $content('articles')
+      .without(['body', 'toc'])
       .sortBy('createdAt', 'desc')
       .fetch()
-
+    console.timeEnd(fetchDocsLabel)
     return {
       articles
     }
