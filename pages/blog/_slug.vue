@@ -47,7 +47,12 @@
           </div>
 
         </div>
-        <div id="comments"></div>
+        <div id="comments" class="border-t border-gray-700 border-dashed mt-6 py-5">
+          <CommentInput :slug="article.slug"/>
+        </div>
+        <div class="space-y-4 max-w-7xl">
+          <Comment v-for="(comment, index) in comments" :comment="comment"  :key="index" />
+        </div>
       </article>
     </div>
   </div>
@@ -67,6 +72,25 @@ export default {
     article.twitterShareUrl = `https://twitter.com/intent/tweet?text=${article.title} by @${article.author.twitter}&url=https://${store.state.domain}${route.fullPath}`
     return {
       article,
+    }
+  },
+  computed: {
+    comments() {
+      const comments = [ ...(this.$store.state.comments[this.article.slug] ? this.$store.state.comments[this.article.slug] : [])]
+      return comments.sort(this.cmp)
+    }
+  },
+  data() {
+    return {
+      toastOptions: { duration: 2000, theme: 'bubble' }
+    }
+  },
+  async fetch() {
+    try {
+      await this.$store.dispatch('fetchComments', {slug: this.article.slug})
+    } catch (e) {
+      this.$toast.error(e.toString(), this.toastOptions)
+      console.error(e)
     }
   },
   head() {
@@ -89,6 +113,11 @@ export default {
         top: 0,
         behavior: 'smooth'
       })
+    },
+    cmp(a, b) {
+      if (a.created < b.created) return 1
+      if (a.created > b.created) return -1
+      return 0
     }
   }
 }

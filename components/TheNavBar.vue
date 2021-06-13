@@ -107,7 +107,7 @@ export default {
       try {
         const user = await this.$store.dispatch('signInUserWithGoogle')
         console.debug('user:', user)
-        this.$toast.success(`welcome ${user.displayName.toLowerCase()}`, this.toastOptions)
+        this.$toast.success(`welcome ${user.displayName.toLowerCase()} 🙌`, this.toastOptions)
       } catch (e) {
         console.error(e)
         this.$toast.error(e.toString(), this.toastOptions)

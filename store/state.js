@@ -40,6 +40,8 @@ const state = {
     enabled: true
   },
   user: null,
+  comments: {},
+  claps: {}
 }
 
 export default function () {

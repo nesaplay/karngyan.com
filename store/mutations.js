@@ -7,21 +7,10 @@ export default {
     Object.assign(state, getDefaultState())
   },
 
-  setOrder(state, order) {
-    state.order = order
-  },
-
   setUser(state, user) {
     state.user = user
   },
 
-  setError(state, error) {
-    state.error = error
-  },
-
-  setCoupon(state, {coupon}) {
-    state.coupon = coupon
-  },
 
   setItem(state, {item, id, resource}) {
 

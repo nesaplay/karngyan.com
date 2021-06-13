@@ -40,5 +40,53 @@ export default {
           reject(error)
         })
     })
+  },
+
+  postComment({commit, state}, {text, slug}) {
+    return new Promise((resolve, reject) => {
+      const timestamp = new Date()
+      const comment = {
+        authorUID: state.user.uid,
+        photoURL: state.user.photoURL,
+        text: text.trim(),
+        name: state.user.displayName,
+        slug,
+        created: timestamp,
+        updated: timestamp
+      }
+      this.$fire.firestore.collection('comments').add(comment)
+        .then((docRef) => {
+          commit('pushItem', {id: slug, item: comment, resource: 'comments'})
+          resolve('posted successfully')
+        }).catch((e) => {
+          reject(e)
+      })
+    })
+  },
+
+  fetchComments({commit, state}, {slug}) {
+    return new Promise((resolve, reject) => {
+      if (state.comments[slug]) {
+        resolve(state.comments[slug])
+        return
+      }
+      commit('setItem', {item: null, id: slug, resource: 'comments'})
+      const comments = []
+      this.$fire.firestore.collection('comments').where('slug', '==', slug)
+        .get()
+        .then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            const comment = { ...doc.data() }
+            comment.created = new Date(comment.created.seconds * 1000)
+            comment.updated = new Date(comment.updated.seconds * 1000)
+            commit('pushItem', {item: comment, id: slug, resource: 'comments'})
+            comments.push(doc.data())
+          })
+          resolve(comments)
+        })
+        .catch((e) => {
+            reject(e)
+        })
+    })
   }
 }

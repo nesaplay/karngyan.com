@@ -4,9 +4,10 @@ export default async function ({ app, store }) {
       const user = app.$fire.auth.currentUser
       if (user) {
         console.debug('[middleware] user logged in')
-        store.commit('')
+        store.dispatch('setFirebaseUser', {authUser: user})
       } else {
         console.debug('[middleware] no user here')
+        store.dispatch('signOut')
       }
     } catch (e) {
       store.dispatch('signOut')
