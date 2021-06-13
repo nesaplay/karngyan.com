@@ -4,7 +4,7 @@
       <main class="">
         <div class="mx-auto py-8 max-w-7xl border-l border-r border-dashed border-gray-700">
           <div class="lg:grid lg:grid-cols-12">
-            <div class="px-4 sm:px-6 border-r border-dashed border-gray-700 sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left lg:flex lg:items-center">
+            <div class="px-4 sm:px-6 lg:border-r lg:border-dashed lg:border-gray-700 sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left lg:flex lg:items-center">
               <div>
                 <nuxt-link :to="localePath('/blog')" class="inline-flex items-center text-white bg-gray-900 rounded-full p-0.5 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200">
                   <span class="px-3 py-0.5 text-white text-xs font-semibold leading-5 tracking-wide bg-indigo-600 rounded-full">{{ $t('hero.iBlogTech') }}</span>

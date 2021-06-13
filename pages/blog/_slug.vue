@@ -2,7 +2,7 @@
 <div class="max-w-7xl mx-auto border-gray-700 border-dashed border-l border-r">
   <div class="dark antialiased text-gray-200">
     <div class="px-4 py-4 max-w-5xl mx-auto sm:px-6 lg:px-8">
-      <article>
+      <article data-aos="fade-up">
         <div class="space-y-9">
           <div class="py-0.5 border-t border-b border-dashed border-gray-700 flex items-center justify-between">
             <div class="text-indigo-700 font-bold">

@@ -6,7 +6,8 @@ const state = {
     linkedin: 'karngyan',
     facebook: 'karnsometimes',
     twitter: 'gyankarn',
-    instagram: 'karngyan.dev'
+    instagram: 'karngyan.dev',
+    codestats: 'karngyan'
   },
   buyMeACoffee: {
     enabled: true,

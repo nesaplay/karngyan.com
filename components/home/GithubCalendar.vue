@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-7xl mx-auto border-l border-r border-dashed border-gray-700">
+  <div data-aos="fade-up" class="max-w-7xl mx-auto border-l border-r border-dashed border-gray-700">
     <div class="max-w-prose text-center mx-auto py-4">
       <p class="text-xs leading-6 text-indigo-600 font-semibold tracking-wide lowercase">{{ $t('githubCalendar.subtext') }}</p>
       <a :href="`https://github.com/${$store.state.social.github}`" target="_blank" class="mt-2 text-3xl hover:text-hot-pink leading-8 font-extrabold tracking-tight text-gray-500">{{ $t('githubCalendar.header') }}</a>
