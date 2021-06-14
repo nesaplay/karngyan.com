@@ -91,9 +91,16 @@ export default {
     '@nuxtjs/firebase',
     '@nuxt/content',
     'nuxt-i18n',
+    '@nuxtjs/pwa',
     '@nuxtjs/toast',
     '@nuxtjs/sitemap'
   ],
+
+  pwa: {
+    icon: {
+      fileName: 'favicon.ico'
+    }
+  },
 
   firebase: {
     config: {
