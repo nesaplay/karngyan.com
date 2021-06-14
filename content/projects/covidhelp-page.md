@@ -8,3 +8,7 @@ website: https://covidhelp.page
 github: https://github.com/karngyan/covidhelp.ui
 twitter: gyankarn
 ---
+
+## coming soon
+
+trying to find the right time to write about it

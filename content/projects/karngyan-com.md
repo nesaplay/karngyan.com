@@ -8,3 +8,7 @@ website: https://karngyan.com
 github: https://github.com/karngyan/karngyan.com
 twitter: gyankarn
 ---
+
+## coming soon
+
+trying to find the right time to write about it
