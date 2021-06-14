@@ -42,11 +42,9 @@ export default {
     },
     async fetchLikes() {
       try {
-        if (this.user) {
-          const { count, id } = await this.$store.dispatch('fetchLikes', {slug: this.slug})
-          this.total = count
-          this.id = id
-        }
+        const { count, id } = await this.$store.dispatch('fetchLikes', {slug: this.slug})
+        this.total = count
+        this.id = id
       } catch (e) {
         console.error(e)
       }
