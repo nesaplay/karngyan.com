@@ -90,6 +90,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/firebase',
     '@nuxt/content',
+    '@nuxtjs/robots',
     'nuxt-i18n',
     '@nuxtjs/pwa',
     '@nuxtjs/toast',
