@@ -12,14 +12,14 @@ export default {
   // enable if you want comments and likes on posts
   // see how it looks on karngyan.com
   firebase: {
-    enabled: true
+    enabled: false
   },
   social: {
-    github: 'karngyan',
-    linkedin: 'karngyan',
-    facebook: 'karnsometimes',
-    twitter: 'gyankarn',
-    instagram: 'karngyan.dev',
+    github: 'nesaplay',
+    linkedin: 'nenadradovanovic',
+    facebook: 'nesaplay',
+    twitter: 'publicshone',
+    instagram: '_ishone',
     codestats: 'karngyan' // https://codestats.net make a profile if you dont already have one.
   },
   buyMeACoffee: {
@@ -86,11 +86,11 @@ export default {
         signOut: 'sign out'
       },
       hero: {
-        iBlogTech: 'i blog tech',
-        haveALook: 'have a look',
-        friendlyNeighborhood: 'your friendly neighborhood',
-        description: 'i am a software engineer and a part time freelancer. i blog tech, write a weekend newsletter called software shots, and tinker with side projects every now n then.',
-        words: ['developer', 'designer', 'engineer', 'programmer', 'encoder'],
+        iBlogTech: 'read my blog',
+        haveALook: 'right here',
+        friendlyNeighborhood: 'Nenad Radovanovic',
+        description: 'I build stuff. I travel. I build stuff while traveling. There are no stupid ideas, just let me know. React, Node, Jamstack... i wish i could speak Javascript.',
+        words: ['developer', 'designer', 'entrepreneur', 'digital nomad'],
       },
       githubCalendar: {
         header: 'contributions',
