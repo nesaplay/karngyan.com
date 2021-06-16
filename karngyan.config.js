@@ -1,10 +1,10 @@
 // Upload files in static/ So any file static/file.pdf -> /file.pdf is accessible at root
 
 export default {
-  name: 'gyan prakash karn',
+  name: 'Nenad Radovanovic',
   domain: 'template.karngyan.com', // add without https:// , used in meta tags and share urls
   image: '/images/bigheadkarngyan.png',
-  email: 'mail@karngyan.com',
+  email: 'nash.radovanovich@com',
   googleAnalyticsV4: {
     enabled: false,
     id: ''
@@ -20,31 +20,29 @@ export default {
     facebook: 'nesaplay',
     twitter: 'publicshone',
     instagram: '_ishone',
-    codestats: 'karngyan' // https://codestats.net make a profile if you dont already have one.
+    codestats: 'nesaplay' // https://codestats.net make a profile if you dont already have one.
   },
   buyMeACoffee: {
-    enabled: true,
+    enabled: false,
     url: 'https://www.buymeacoffee.com/karngyan'
   },
   projects: {
-    enabled: true,
+    enabled: false,
   },
   blog: {
     enabled: true,
   },
   resume: {
-    enabled: true,
+    enabled: false,
     pdfUrl: '/RESUME_GYAN_KARN_DARK.pdf' // add files in static folder
   },
   uses: {
     enabled: true,
     meta: [
-      {title: 'OS', value: 'macOS Catalina'},
-      {title: 'Memory', value: '16 GB 2667 MHz DDR4'},
-      {title: 'Keyboard', value: 'Keychron K2 - Gateron Brown Keys'},
-      {title: 'Mouse', value: 'Logitech Silent Pebble'},
-      {title: 'Monitor', value: 'LG QHD (2560 x 1440) 27 Inch IPS Display'},
-      {title: 'Laptop • Processor • Graphics', value: 'MacBook Pro (16-inch, 2019) • 2.6 GHz 6-Core Intel Core i7 • AMD Radeon Pro 5300M 4 GB + Intel UHD Graphics 630 1536 MB'}
+      {title: 'Laptop', value: 'MacBook Pro (13-inch, 2017)'},
+      {title: 'Keyboard', value: 'Logitech K380 Bluetooth'},
+      {title: 'Mouse', value: 'Apple Magic Mouse 2'},
+      {title: 'Stand', value: 'Nextstand K2'},
     ]
   },
   workedAt: {
@@ -58,7 +56,7 @@ export default {
     ]
   },
   loadingIndicator: {
-    name: 'pulse'
+    name: 'wandering-cubes'
     // https://tobiasahlin.com/spinkit/
     // circle
     // cube-grid
@@ -87,7 +85,7 @@ export default {
       },
       hero: {
         iBlogTech: 'read my blog',
-        haveALook: 'right here',
+        haveALook: 'this way',
         friendlyNeighborhood: 'Nenad Radovanovic',
         description: 'I build stuff. I travel. I build stuff while traveling. There are no stupid ideas, just let me know. React, Node, Jamstack... i wish i could speak Javascript.',
         words: ['developer', 'designer', 'entrepreneur', 'digital nomad'],
