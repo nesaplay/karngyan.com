@@ -2,7 +2,7 @@
 
 export default {
   name: 'Nenad Radovanovic',
-  domain: 'template.karngyan.com', // add without https:// , used in meta tags and share urls
+  domain: 'nenad.xyz', // add without https:// , used in meta tags and share urls
   image: '/images/bigheadkarngyan.png',
   email: 'nash.radovanovich@com',
   googleAnalyticsV4: {
@@ -33,8 +33,8 @@ export default {
     enabled: true,
   },
   resume: {
-    enabled: false,
-    pdfUrl: '/RESUME_GYAN_KARN_DARK.pdf' // add files in static folder
+    enabled: true,
+    pdfUrl: '/Profile.pdf' // add files in static folder
   },
   uses: {
     enabled: true,
@@ -49,10 +49,11 @@ export default {
     // add logos in static and at max add 3/4
     enabled: true,
     meta: [
-      { name: 'SendPost', src: '/images/sendpost.png', url: 'https://sendpost.io' },
-      { name: 'Amazon', src: '/images/amazon.png', url: 'https://amazon.in' },
-      { name: 'InterviewReady', src: '/images/interviewready-io.png', url: 'https://get.interviewready.io' },
-      { name: 'CrioDo', src: '/images/crio.png', url: 'https://crio.do' },
+      { name: 'Marknadsinformation', src: '/images/mise.png', url: 'https://www.marknadsinformation.se/' },
+      { name: 'SAP', src: '/images/sap.png', url: 'https://www.sap.com/westbalkans/about.html' },
+      { name: 'Calidus Cloud', src: '/images/calidus-cloud.png', url: 'https://www.sap.com/acquired-brands/what-is-calliduscloud.html' },
+      { name: 'Gentlebirth', src: '/images/gentlebirth.png', url: 'https://www.gentlebirth.com/' },
+      { name: 'Computer Rock', src: '/images/computer-rock.png', url: 'https://computerrock.com/' },
     ]
   },
   loadingIndicator: {
@@ -88,7 +89,7 @@ export default {
         haveALook: 'this way',
         friendlyNeighborhood: 'Nenad Radovanovic',
         description: 'I build stuff. I travel. I build stuff while traveling. There are no stupid ideas, just let me know. React, Node, Jamstack... i wish i could speak Javascript.',
-        words: ['developer', 'designer', 'entrepreneur', 'digital nomad'],
+        words: ['developer', 'designer', 'digital nomad', 'entrepreneur'],
       },
       githubCalendar: {
         header: 'contributions',
@@ -96,11 +97,11 @@ export default {
       },
       blog: {
         header: 'blog',
-        subtext: 'i try to write once in a while. let me know your thoughts in comments or mail@karngyan.com'
+        subtext: 'coming soon'
       },
       recentBlog: {
         header: 'recent blogs',
-        subtext: 'it takes a lot of time to write man'
+        subtext: 'coming soon'
       },
       uses: {
         header: 'uses',
