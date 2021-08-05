@@ -88,7 +88,7 @@ export default {
         iBlogTech: 'read my blog',
         haveALook: 'this way',
         friendlyNeighborhood: 'Nenad Radovanovic',
-        description: 'I build stuff. I travel. I build stuff while traveling. There are no stupid ideas, just let me know. React, Node, Jamstack... i wish i could speak Javascript.',
+        description: 'I build stuff. I travel. I build stuff while traveling. React, Node, Jamstack, Blockchain, DeFi, ETH, Polygon...',
         words: ['developer', 'designer', 'digital nomad', 'entrepreneur'],
       },
       githubCalendar: {
